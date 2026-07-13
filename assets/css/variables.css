@@ -1,0 +1,175 @@
+/* ==========================================================
+   VARIABLES.CSS
+   Opini Visual — Design System
+   Version 1.0
+
+   Seluruh identitas visual website (warna, tipografi, spacing,
+   radius, shadow, transisi, z-index) didefinisikan di sini.
+   Mengubah brand di kemudian hari cukup dilakukan dari file ini.
+========================================================== */
+
+:root{
+
+    /* ----------------------------------------------------
+       1. COLOR PALETTE
+    ---------------------------------------------------- */
+
+    /* Base — dark cinematic background */
+    --color-bg-primary:#0D0D0D;
+    --color-bg-secondary:#141414;
+    --color-bg-tertiary:#1C1C1C;
+    --color-bg-elevated:#232323;
+
+    /* Brand — warm gold accent */
+    --color-gold:#D6A85B;
+    --color-gold-light:#E4C285;
+    --color-gold-dark:#B98A3F;
+    --color-gold-muted:rgba(214,168,91,0.12);
+
+    /* Text */
+    --color-text-primary:#F5F3EF;
+    --color-text-secondary:#B8B5AE;
+    --color-text-muted:#7A7772;
+    --color-text-on-gold:#111111;
+
+    /* Border / Divider */
+    --color-border:#2A2A2A;
+    --color-border-light:rgba(255,255,255,0.08);
+    --color-border-gold:rgba(214,168,91,0.35);
+
+    /* Semantic */
+    --color-success:#5BA97C;
+    --color-error:#C4573E;
+    --color-warning:#D6A85B;
+    --color-info:#5B8FA9;
+
+    /* Overlay */
+    --color-overlay:rgba(0,0,0,0.6);
+    --color-overlay-strong:rgba(0,0,0,0.85);
+
+
+    /* ----------------------------------------------------
+       2. TYPOGRAPHY
+    ---------------------------------------------------- */
+
+    --font-display:"Cormorant Garamond", "Playfair Display", serif;
+    --font-body:"Inter", "DM Sans", -apple-system, sans-serif;
+
+    /* Fluid type scale — clamp(min, preferred, max) */
+    --fs-xs:clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+    --fs-sm:clamp(0.875rem, 0.84rem + 0.2vw, 0.9375rem);
+    --fs-base:clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+    --fs-md:clamp(1.125rem, 1.07rem + 0.3vw, 1.25rem);
+    --fs-lg:clamp(1.375rem, 1.28rem + 0.5vw, 1.625rem);
+    --fs-xl:clamp(1.75rem, 1.55rem + 1vw, 2.25rem);
+    --fs-2xl:clamp(2.25rem, 1.9rem + 1.8vw, 3.25rem);
+    --fs-3xl:clamp(3rem, 2.4rem + 3vw, 4.5rem);
+
+    --fw-regular:400;
+    --fw-medium:500;
+    --fw-semibold:600;
+    --fw-bold:700;
+
+    --lh-tight:1.15;
+    --lh-snug:1.35;
+    --lh-normal:1.6;
+    --lh-relaxed:1.8;
+
+    --ls-tight:-0.02em;
+    --ls-normal:0;
+    --ls-wide:0.08em;
+
+
+    /* ----------------------------------------------------
+       3. CONTAINER
+    ---------------------------------------------------- */
+
+    --container-sm:640px;
+    --container-md:840px;
+    --container-lg:1120px;
+    --container-xl:1320px;
+    --container-padding:1.25rem;
+
+
+    /* ----------------------------------------------------
+       4. BORDER RADIUS
+    ---------------------------------------------------- */
+
+    --radius-sm:6px;
+    --radius-md:12px;
+    --radius-lg:20px;
+    --radius-xl:32px;
+    --radius-full:999px;
+
+
+    /* ----------------------------------------------------
+       5. SHADOW
+    ---------------------------------------------------- */
+
+    --shadow-sm:0 2px 8px rgba(0,0,0,0.25);
+    --shadow-md:0 8px 24px rgba(0,0,0,0.35);
+    --shadow-lg:0 16px 48px rgba(0,0,0,0.45);
+    --shadow-gold:0 8px 28px rgba(214,168,91,0.25);
+
+
+    /* ----------------------------------------------------
+       6. SPACING (base unit: 4px)
+    ---------------------------------------------------- */
+
+    --space-1:0.25rem;
+    --space-2:0.5rem;
+    --space-3:0.75rem;
+    --space-4:1rem;
+    --space-5:1.25rem;
+    --space-6:1.5rem;
+    --space-8:2rem;
+    --space-10:2.5rem;
+    --space-12:3rem;
+    --space-16:4rem;
+    --space-20:5rem;
+    --space-24:6rem;
+    --space-32:8rem;
+
+
+    /* ----------------------------------------------------
+       7. TRANSITION
+    ---------------------------------------------------- */
+
+    --ease-standard:cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out:cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out:cubic-bezier(0.65, 0, 0.35, 1);
+
+    --duration-fast:150ms;
+    --duration-base:300ms;
+    --duration-slow:500ms;
+    --duration-slower:800ms;
+
+
+    /* ----------------------------------------------------
+       8. Z-INDEX SCALE
+    ---------------------------------------------------- */
+
+    --z-base:0;
+    --z-dropdown:100;
+    --z-sticky:200;
+    --z-navbar:300;
+    --z-overlay:400;
+    --z-modal:500;
+    --z-toast:600;
+    --z-tooltip:700;
+
+
+    /* ----------------------------------------------------
+       9. BREAKPOINTS (reference only)
+       Catatan: custom properties tidak bisa dipakai langsung
+       di dalam @media query. Nilai berikut adalah referensi
+       resmi yang WAJIB dipakai manual di responsive.css agar
+       konsisten di seluruh file.
+       --bp-sm : 480px
+       --bp-md : 768px
+       --bp-lg : 1024px
+       --bp-xl : 1280px
+       --bp-2xl: 1536px
+    ---------------------------------------------------- */
+
+}

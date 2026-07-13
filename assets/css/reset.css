@@ -1,0 +1,139 @@
+/* ==========================================================
+   RESET.CSS
+   Opini Visual
+   Version 1.0
+========================================================== */
+
+/* Box Model */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* HTML */
+
+html{
+    scroll-behavior:smooth;
+    font-size:16px;
+}
+
+/* Body */
+
+body{
+    min-height:100vh;
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* Images */
+
+img,
+picture{
+    display:block;
+    max-width:100%;
+}
+
+/* Video */
+
+video{
+    display:block;
+    width:100%;
+}
+
+/* Form */
+
+input,
+button,
+textarea,
+select{
+    font:inherit;
+}
+
+/* Button */
+
+button{
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+/* Links */
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* Lists */
+
+ul,
+ol{
+    list-style:none;
+}
+
+/* Table */
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight:inherit;
+}
+
+p{
+    line-height:1.7;
+}
+
+/* Utility */
+
+textarea{
+    resize:vertical;
+}
+
+iframe{
+    border:0;
+}
+
+svg{
+    display:block;
+}
+
+/* Selection */
+
+::selection{
+    background:#D6A85B;
+    color:#111;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#333;
+    border-radius:100px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#D6A85B;
+}

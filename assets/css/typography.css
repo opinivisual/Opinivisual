@@ -1,0 +1,237 @@
+/* ==========================================================
+   TYPOGRAPHY.CSS
+   Opini Visual
+   Version 1.0
+
+   Mendefinisikan gaya teks dasar untuk seluruh website.
+   Semua nilai diambil dari assets/css/variables.css agar
+   konsisten dan mudah diubah dari satu tempat.
+========================================================== */
+
+/* ----------------------------------------------------
+   Base
+---------------------------------------------------- */
+
+body{
+    font-family:var(--font-body);
+    font-size:var(--fs-base);
+    font-weight:var(--fw-regular);
+    line-height:var(--lh-normal);
+    color:var(--color-text-primary);
+    background-color:var(--color-bg-primary);
+}
+
+
+/* ----------------------------------------------------
+   Headings
+---------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family:var(--font-display);
+    font-weight:var(--fw-semibold);
+    line-height:var(--lh-tight);
+    letter-spacing:var(--ls-tight);
+    color:var(--color-text-primary);
+}
+
+h1{
+    font-size:var(--fs-3xl);
+}
+
+h2{
+    font-size:var(--fs-2xl);
+}
+
+h3{
+    font-size:var(--fs-xl);
+}
+
+h4{
+    font-size:var(--fs-lg);
+}
+
+h5{
+    font-size:var(--fs-md);
+    font-weight:var(--fw-medium);
+}
+
+h6{
+    font-size:var(--fs-base);
+    font-weight:var(--fw-medium);
+    text-transform:uppercase;
+    letter-spacing:var(--ls-wide);
+}
+
+
+/* ----------------------------------------------------
+   Paragraph & Body Text
+---------------------------------------------------- */
+
+p{
+    font-size:var(--fs-base);
+    line-height:var(--lh-relaxed);
+    color:var(--color-text-secondary);
+}
+
+p + p{
+    margin-top:var(--space-4);
+}
+
+.text-lead{
+    font-size:var(--fs-lg);
+    line-height:var(--lh-snug);
+    color:var(--color-text-primary);
+    font-weight:var(--fw-regular);
+}
+
+small,
+.text-sm{
+    font-size:var(--fs-sm);
+    color:var(--color-text-muted);
+}
+
+.text-xs{
+    font-size:var(--fs-xs);
+    color:var(--color-text-muted);
+}
+
+
+/* ----------------------------------------------------
+   Eyebrow / Kicker (label kecil di atas heading section)
+---------------------------------------------------- */
+
+.eyebrow{
+    display:inline-block;
+    font-family:var(--font-body);
+    font-size:var(--fs-xs);
+    font-weight:var(--fw-semibold);
+    letter-spacing:var(--ls-wide);
+    text-transform:uppercase;
+    color:var(--color-gold);
+    margin-bottom:var(--space-3);
+}
+
+
+/* ----------------------------------------------------
+   Links
+---------------------------------------------------- */
+
+a{
+    color:var(--color-gold);
+    transition:color var(--duration-fast) var(--ease-standard);
+}
+
+a:hover{
+    color:var(--color-gold-light);
+}
+
+.link-underline{
+    text-decoration:underline;
+    text-underline-offset:4px;
+    text-decoration-color:var(--color-border-gold);
+}
+
+
+/* ----------------------------------------------------
+   Emphasis
+---------------------------------------------------- */
+
+strong,
+b{
+    font-weight:var(--fw-semibold);
+    color:var(--color-text-primary);
+}
+
+em,
+i{
+    font-style:italic;
+}
+
+mark{
+    background:var(--color-gold-muted);
+    color:var(--color-text-primary);
+    padding:0 var(--space-1);
+}
+
+
+/* ----------------------------------------------------
+   Lists
+---------------------------------------------------- */
+
+.list-styled li{
+    position:relative;
+    padding-left:var(--space-6);
+    margin-bottom:var(--space-3);
+    color:var(--color-text-secondary);
+}
+
+.list-styled li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0.55em;
+    width:8px;
+    height:8px;
+    border-radius:var(--radius-full);
+    background:var(--color-gold);
+}
+
+
+/* ----------------------------------------------------
+   Blockquote
+---------------------------------------------------- */
+
+blockquote{
+    font-family:var(--font-display);
+    font-size:var(--fs-lg);
+    font-style:italic;
+    line-height:var(--lh-snug);
+    color:var(--color-text-primary);
+    border-left:2px solid var(--color-gold);
+    padding-left:var(--space-6);
+}
+
+blockquote cite{
+    display:block;
+    margin-top:var(--space-3);
+    font-family:var(--font-body);
+    font-style:normal;
+    font-size:var(--fs-sm);
+    color:var(--color-text-muted);
+}
+
+
+/* ----------------------------------------------------
+   Code (dokumentasi teknis / brief teknis di website)
+---------------------------------------------------- */
+
+code{
+    font-family:"SFMono-Regular", Consolas, monospace;
+    font-size:0.9em;
+    background:var(--color-bg-tertiary);
+    padding:0.15em 0.4em;
+    border-radius:var(--radius-sm);
+    color:var(--color-gold-light);
+}
+
+
+/* ----------------------------------------------------
+   Text Alignment & Color Utilities
+---------------------------------------------------- */
+
+.text-center{ text-align:center; }
+.text-left{ text-align:left; }
+.text-right{ text-align:right; }
+
+.text-gold{ color:var(--color-gold); }
+.text-muted{ color:var(--color-text-muted); }
+.text-primary{ color:var(--color-text-primary); }
+
+.text-balance{
+    text-wrap:balance;
+}

@@ -1,0 +1,175 @@
+/* ==========================================================
+   BUTTONS.CSS
+   Opini Visual
+   Version 1.0
+
+   Sistem tombol: primary, secondary, ghost, outline.
+   Semua ukuran & warna diambil dari variables.css.
+========================================================== */
+
+/* ----------------------------------------------------
+   Base
+---------------------------------------------------- */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:var(--space-2);
+    font-family:var(--font-body);
+    font-size:var(--fs-sm);
+    font-weight:var(--fw-semibold);
+    letter-spacing:var(--ls-normal);
+    white-space:nowrap;
+    padding:0.9rem 1.75rem;
+    border-radius:var(--radius-full);
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:
+        background-color var(--duration-fast) var(--ease-standard),
+        border-color var(--duration-fast) var(--ease-standard),
+        color var(--duration-fast) var(--ease-standard),
+        transform var(--duration-fast) var(--ease-standard),
+        box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.btn:active{
+    transform:scale(0.97);
+}
+
+.btn:focus-visible{
+    outline:2px solid var(--color-gold);
+    outline-offset:3px;
+}
+
+.btn:disabled,
+.btn.is-disabled{
+    opacity:0.45;
+    cursor:not-allowed;
+    pointer-events:none;
+}
+
+
+/* ----------------------------------------------------
+   Variants
+---------------------------------------------------- */
+
+/* Primary — solid gold, CTA utama (Book a Call, Get Started) */
+.btn-primary{
+    background:var(--color-gold);
+    color:var(--color-text-on-gold);
+    box-shadow:var(--shadow-gold);
+}
+
+.btn-primary:hover{
+    background:var(--color-gold-light);
+    box-shadow:0 12px 32px rgba(214,168,91,0.35);
+}
+
+/* Secondary — solid dark elevated */
+.btn-secondary{
+    background:var(--color-bg-elevated);
+    color:var(--color-text-primary);
+    border-color:var(--color-border-light);
+}
+
+.btn-secondary:hover{
+    background:var(--color-bg-tertiary);
+    border-color:var(--color-border-gold);
+}
+
+/* Outline — border gold, transparan */
+.btn-outline{
+    background:transparent;
+    color:var(--color-text-primary);
+    border-color:var(--color-border-gold);
+}
+
+.btn-outline:hover{
+    background:var(--color-gold-muted);
+    border-color:var(--color-gold);
+}
+
+/* Ghost — tanpa border, minimal, untuk aksi sekunder */
+.btn-ghost{
+    background:transparent;
+    color:var(--color-text-secondary);
+    padding-left:var(--space-2);
+    padding-right:var(--space-2);
+}
+
+.btn-ghost:hover{
+    color:var(--color-gold);
+}
+
+/* Link-style button — tampil sebagai teks bergaris bawah */
+.btn-link{
+    background:none;
+    padding:0;
+    border-radius:0;
+    color:var(--color-gold);
+    text-underline-offset:4px;
+}
+
+.btn-link:hover{
+    text-decoration:underline;
+    color:var(--color-gold-light);
+}
+
+
+/* ----------------------------------------------------
+   Sizes
+---------------------------------------------------- */
+
+.btn-sm{
+    font-size:var(--fs-xs);
+    padding:0.6rem 1.25rem;
+}
+
+.btn-lg{
+    font-size:var(--fs-md);
+    padding:1.15rem 2.25rem;
+}
+
+.btn-block{
+    width:100%;
+}
+
+
+/* ----------------------------------------------------
+   Icon Button
+---------------------------------------------------- */
+
+.btn-icon{
+    padding:0.75rem;
+    border-radius:var(--radius-full);
+    aspect-ratio:1/1;
+}
+
+.btn svg,
+.btn img{
+    width:1.1em;
+    height:1.1em;
+    flex-shrink:0;
+}
+
+/* Panah animasi di CTA (mis. "Book a Call →") */
+.btn .btn-arrow{
+    transition:transform var(--duration-fast) var(--ease-standard);
+}
+
+.btn:hover .btn-arrow{
+    transform:translateX(4px);
+}
+
+
+/* ----------------------------------------------------
+   Group
+---------------------------------------------------- */
+
+.btn-group{
+    display:flex;
+    align-items:center;
+    gap:var(--space-4);
+    flex-wrap:wrap;
+}

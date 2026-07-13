@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Opini Visual</title>
+<meta name="description" content="Answers to common questions about how Opini Visual works with wedding studios, from software and file transfer to revisions and NDAs.">
+
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="assets/css/main.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============================================
+     NAVBAR
+============================================ -->
+<header class="navbar">
+    <div class="navbar-inner">
+
+        <a href="index.html" class="navbar-logo">
+            <img src="assets/images/logo.png" alt="Opini Visual">
+            Opini Visual
+        </a>
+
+        <nav class="navbar-menu">
+            <a href="index.html" class="navbar-link">Home</a>
+            <a href="about.html" class="navbar-link">About</a>
+            <a href="services.html" class="navbar-link">Services</a>
+            <a href="portfolio.html" class="navbar-link">Portfolio</a>
+            <a href="workflow.html" class="navbar-link">Workflow</a>
+            <a href="pricing.html" class="navbar-link">Pricing</a>
+            <a href="faq.html" class="navbar-link is-active">FAQ</a>
+            <a href="contact.html" class="navbar-link">Contact</a>
+
+            <a href="contact.html" class="btn btn-primary btn-sm">
+                Book a Call
+                <span class="btn-arrow">→</span>
+            </a>
+        </nav>
+
+        <div class="navbar-actions">
+            <a href="contact.html" class="btn btn-primary btn-sm hide-mobile">
+                Book a Call
+                <span class="btn-arrow">→</span>
+            </a>
+            <button class="navbar-toggle" aria-label="Buka menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+    </div>
+</header>
+
+<div class="navbar-backdrop"></div>
+
+
+<!-- ============================================
+     PAGE HEADER
+============================================ -->
+<section class="section" style="padding-top:calc(var(--space-24) + 3rem);">
+    <div class="container-md text-center">
+        <span class="eyebrow">FAQ</span>
+        <h1>Answers before you even have to ask</h1>
+        <p class="text-lead" style="margin:var(--space-6) auto 0; max-width:60ch;">
+            Still have a question that's not here? Book a free call and ask us directly.
+        </p>
+    </div>
+</section>
+
+
+<!-- ============================================
+     FAQ LIST
+============================================ -->
+<section class="section section-alt">
+    <div class="container-md">
+        <div class="faq-list" data-source="data/faq.json" data-single-open></div>
+    </div>
+</section>
+
+
+<!-- ============================================
+     CTA BAND
+============================================ -->
+<section class="section">
+    <div class="container">
+        <div class="cta-band">
+            <span class="eyebrow">Still Unsure?</span>
+            <h2>Ask us directly — no pressure, no pitch</h2>
+            <p style="max-width:520px; margin:0 auto var(--space-8);">
+                Book a free 20-minute call and we'll answer anything specific to your studio's workflow.
+            </p>
+            <a href="contact.html" class="btn btn-primary btn-lg">
+                Book a Free Call
+                <span class="btn-arrow">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer class="footer">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="assets/images/logo.png" alt="Opini Visual">
+                    Opini Visual
+                </a>
+                <p class="footer-tagline">
+                    White-label post-production partner for wedding filmmakers who want to
+                    grow without growing their team.
+                </p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><img src="assets/images/icons/instagram.png" alt=""></a>
+                    <a href="#" aria-label="YouTube"><img src="assets/images/icons/youtube.png" alt=""></a>
+                    <a href="#" aria-label="LinkedIn"><img src="assets/images/icons/linkedin.png" alt=""></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <p class="footer-col-title">Company</p>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="workflow.html">Workflow</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <p class="footer-col-title">Support</p>
+                <ul>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <p class="footer-col-title">Legal</p>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">© <span data-current-year></span> Opini Visual. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+<!-- ============================================
+     SCRIPTS
+============================================ -->
+<script src="assets/js/navbar.js" defer></script>
+<script src="assets/js/hero.js" defer></script>
+<script src="assets/js/counter.js" defer></script>
+<script src="assets/js/testimonials.js" defer></script>
+<script src="assets/js/portfolio.js" defer></script>
+<script src="assets/js/faq.js" defer></script>
+<script src="assets/js/form.js" defer></script>
+<script src="assets/js/animation.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+
+</body>
+</html>

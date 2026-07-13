@@ -1,0 +1,397 @@
+/* ==========================================================
+   CARDS.CSS
+   Opini Visual
+   Version 1.0
+
+   Sistem card: service card, portfolio card, testimonial card,
+   pricing card, dan team card.
+========================================================== */
+
+/* ----------------------------------------------------
+   Base Card
+---------------------------------------------------- */
+
+.card{
+    position:relative;
+    background:var(--color-bg-tertiary);
+    border:1px solid var(--color-border);
+    border-radius:var(--radius-lg);
+    padding:var(--space-8);
+    transition:
+        border-color var(--duration-base) var(--ease-standard),
+        transform var(--duration-base) var(--ease-standard),
+        box-shadow var(--duration-base) var(--ease-standard);
+}
+
+.card:hover{
+    border-color:var(--color-border-gold);
+    transform:translateY(-4px);
+    box-shadow:var(--shadow-md);
+}
+
+
+/* ----------------------------------------------------
+   Service Card
+---------------------------------------------------- */
+
+.card-service{
+    display:flex;
+    flex-direction:column;
+    gap:var(--space-5);
+}
+
+.card-service-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:56px;
+    height:56px;
+    border-radius:var(--radius-md);
+    background:var(--color-gold-muted);
+    color:var(--color-gold);
+}
+
+.card-service-icon svg,
+.card-service-icon img{
+    width:26px;
+    height:26px;
+}
+
+.card-service h3{
+    font-size:var(--fs-md);
+}
+
+.card-service p{
+    font-size:var(--fs-sm);
+    color:var(--color-text-muted);
+}
+
+.card-service-link{
+    margin-top:auto;
+    display:inline-flex;
+    align-items:center;
+    gap:var(--space-2);
+    font-size:var(--fs-sm);
+    font-weight:var(--fw-semibold);
+    color:var(--color-gold);
+}
+
+.card-service-link svg{
+    width:14px;
+    height:14px;
+    transition:transform var(--duration-fast) var(--ease-standard);
+}
+
+.card-service-link:hover svg{
+    transform:translateX(3px);
+}
+
+
+/* ----------------------------------------------------
+   Portfolio Card
+---------------------------------------------------- */
+
+.card-portfolio{
+    padding:0;
+    overflow:hidden;
+    background:var(--color-bg-tertiary);
+}
+
+.card-portfolio-media{
+    position:relative;
+    aspect-ratio:4/5;
+    overflow:hidden;
+}
+
+.card-portfolio-media img,
+.card-portfolio-media video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform var(--duration-slower) var(--ease-out);
+}
+
+.card-portfolio:hover .card-portfolio-media img,
+.card-portfolio:hover .card-portfolio-media video{
+    transform:scale(1.06);
+}
+
+.card-portfolio-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 55%, transparent 100%);
+    display:flex;
+    align-items:flex-end;
+    padding:var(--space-6);
+    opacity:0;
+    transition:opacity var(--duration-base) var(--ease-standard);
+}
+
+.card-portfolio:hover .card-portfolio-overlay{
+    opacity:1;
+}
+
+.card-portfolio-body{
+    padding:var(--space-5) var(--space-6);
+}
+
+.card-portfolio-tag{
+    font-size:var(--fs-xs);
+    text-transform:uppercase;
+    letter-spacing:var(--ls-wide);
+    color:var(--color-gold);
+    margin-bottom:var(--space-1);
+}
+
+.card-portfolio h4{
+    font-size:var(--fs-md);
+    color:var(--color-text-primary);
+}
+
+
+/* ----------------------------------------------------
+   Testimonial Card
+---------------------------------------------------- */
+
+.card-testimonial{
+    display:flex;
+    flex-direction:column;
+    gap:var(--space-5);
+    background:var(--color-bg-elevated);
+}
+
+.card-testimonial-quote{
+    font-family:var(--font-display);
+    font-size:var(--fs-md);
+    font-style:italic;
+    line-height:var(--lh-snug);
+    color:var(--color-text-primary);
+}
+
+.card-testimonial-author{
+    display:flex;
+    align-items:center;
+    gap:var(--space-3);
+    margin-top:auto;
+}
+
+.card-testimonial-avatar{
+    width:44px;
+    height:44px;
+    border-radius:var(--radius-full);
+    object-fit:cover;
+    flex-shrink:0;
+}
+
+.card-testimonial-name{
+    font-size:var(--fs-sm);
+    font-weight:var(--fw-semibold);
+    color:var(--color-text-primary);
+}
+
+.card-testimonial-role{
+    font-size:var(--fs-xs);
+    color:var(--color-text-muted);
+}
+
+.card-testimonial-stars{
+    display:flex;
+    gap:2px;
+    color:var(--color-gold);
+}
+
+.card-testimonial-stars svg{
+    width:14px;
+    height:14px;
+}
+
+
+/* ----------------------------------------------------
+   Pricing Card
+---------------------------------------------------- */
+
+.card-pricing{
+    display:flex;
+    flex-direction:column;
+    gap:var(--space-6);
+    text-align:center;
+}
+
+.card-pricing.is-featured{
+    background:var(--color-bg-elevated);
+    border-color:var(--color-gold);
+    box-shadow:var(--shadow-gold);
+    transform:scale(1.03);
+}
+
+.card-pricing-badge{
+    position:absolute;
+    top:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--color-gold);
+    color:var(--color-text-on-gold);
+    font-size:var(--fs-xs);
+    font-weight:var(--fw-semibold);
+    text-transform:uppercase;
+    letter-spacing:var(--ls-wide);
+    padding:var(--space-1) var(--space-4);
+    border-radius:var(--radius-full);
+}
+
+.card-pricing-name{
+    font-size:var(--fs-sm);
+    text-transform:uppercase;
+    letter-spacing:var(--ls-wide);
+    color:var(--color-text-muted);
+}
+
+.card-pricing-price{
+    font-family:var(--font-display);
+    font-size:var(--fs-2xl);
+    font-weight:var(--fw-semibold);
+    color:var(--color-text-primary);
+}
+
+.card-pricing-price span{
+    font-family:var(--font-body);
+    font-size:var(--fs-sm);
+    font-weight:var(--fw-regular);
+    color:var(--color-text-muted);
+}
+
+.card-pricing-features{
+    display:flex;
+    flex-direction:column;
+    gap:var(--space-3);
+    text-align:left;
+}
+
+.card-pricing-features li{
+    display:flex;
+    align-items:flex-start;
+    gap:var(--space-2);
+    font-size:var(--fs-sm);
+    color:var(--color-text-secondary);
+}
+
+.card-pricing-features svg{
+    width:16px;
+    height:16px;
+    flex-shrink:0;
+    margin-top:2px;
+    color:var(--color-gold);
+}
+
+
+/* ----------------------------------------------------
+   Team Card
+---------------------------------------------------- */
+
+.card-team{
+    padding:0;
+    background:transparent;
+    border:none;
+    text-align:center;
+}
+
+.card-team:hover{
+    transform:none;
+    box-shadow:none;
+}
+
+.card-team-photo{
+    aspect-ratio:1/1;
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    margin-bottom:var(--space-4);
+}
+
+.card-team-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.card-team-name{
+    font-size:var(--fs-md);
+    color:var(--color-text-primary);
+}
+
+.card-team-role{
+    font-size:var(--fs-sm);
+    color:var(--color-gold);
+}
+
+
+/* ----------------------------------------------------
+   Stat / Counter Card (mis. "500+ Projects Delivered")
+---------------------------------------------------- */
+
+.card-stat{
+    text-align:center;
+    background:transparent;
+    border:none;
+    padding:var(--space-6);
+}
+
+.card-stat:hover{
+    transform:none;
+    box-shadow:none;
+}
+
+.card-stat-number{
+    font-family:var(--font-display);
+    font-size:var(--fs-3xl);
+    font-weight:var(--fw-semibold);
+    color:var(--color-gold);
+    line-height:var(--lh-tight);
+}
+
+.card-stat-label{
+    font-size:var(--fs-sm);
+    color:var(--color-text-muted);
+    margin-top:var(--space-2);
+}
+
+
+/* ----------------------------------------------------
+   Grid Helper
+---------------------------------------------------- */
+
+.card-grid{
+    display:grid;
+    gap:var(--space-8);
+    grid-template-columns:repeat(3, 1fr);
+}
+
+.card-grid-2{
+    grid-template-columns:repeat(2, 1fr);
+}
+
+.card-grid-4{
+    grid-template-columns:repeat(4, 1fr);
+}
+
+@media (max-width:1024px){
+
+    .card-grid,
+    .card-grid-4{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width:768px){
+
+    .card-grid,
+    .card-grid-2,
+    .card-grid-4{
+        grid-template-columns:1fr;
+    }
+
+    .card-pricing.is-featured{
+        transform:none;
+    }
+
+}
