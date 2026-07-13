@@ -1,0 +1,562 @@
+/* ==========================================================
+   SECTIONS.CSS
+   Opini Visual
+   Version 1.0
+
+   Layout tingkat section: container, hero, section header,
+   split layout, CTA band, workflow steps, FAQ accordion.
+   File ini yang menyatukan cards/buttons/typography jadi
+   tata letak halaman utuh.
+========================================================== */
+
+/* ----------------------------------------------------
+   Container & Section Base
+---------------------------------------------------- */
+
+.container{
+    max-width:var(--container-xl);
+    margin:0 auto;
+    padding:0 var(--container-padding);
+}
+
+.container-md{
+    max-width:var(--container-md);
+    margin:0 auto;
+    padding:0 var(--container-padding);
+}
+
+.container-sm{
+    max-width:var(--container-sm);
+    margin:0 auto;
+    padding:0 var(--container-padding);
+}
+
+.section{
+    padding:var(--space-24) 0;
+}
+
+.section-sm{
+    padding:var(--space-16) 0;
+}
+
+.section-lg{
+    padding:var(--space-32) 0;
+}
+
+.section-alt{
+    background:var(--color-bg-secondary);
+}
+
+
+/* ----------------------------------------------------
+   Section Header (eyebrow + heading + deskripsi)
+---------------------------------------------------- */
+
+.section-header{
+    max-width:640px;
+    margin-bottom:var(--space-16);
+}
+
+.section-header.text-center{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.section-header h2{
+    margin-bottom:var(--space-4);
+}
+
+.section-header p{
+    font-size:var(--fs-md);
+}
+
+
+/* ----------------------------------------------------
+   Hero Section
+---------------------------------------------------- */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:var(--space-24);
+    overflow:hidden;
+}
+
+.hero-media{
+    position:absolute;
+    inset:0;
+    z-index:var(--z-base);
+}
+
+.hero-media video,
+.hero-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-media::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.75) 60%, var(--color-bg-primary) 100%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
+    max-width:820px;
+}
+
+.hero-content h1{
+    margin-bottom:var(--space-6);
+}
+
+.hero-content .text-lead{
+    margin-bottom:var(--space-8);
+    max-width:56ch;
+}
+
+.hero-actions{
+    display:flex;
+    align-items:center;
+    gap:var(--space-5);
+    flex-wrap:wrap;
+}
+
+.hero-scroll-cue{
+    position:absolute;
+    bottom:var(--space-8);
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:var(--space-2);
+    font-size:var(--fs-xs);
+    color:var(--color-text-muted);
+    text-transform:uppercase;
+    letter-spacing:var(--ls-wide);
+}
+
+
+/* ----------------------------------------------------
+   Split Layout (gambar + teks berdampingan)
+---------------------------------------------------- */
+
+.split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:var(--space-16);
+    align-items:center;
+}
+
+.split-reverse{
+    direction:rtl;
+}
+
+.split-reverse > *{
+    direction:ltr;
+}
+
+.split-media{
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+}
+
+.split-media img,
+.split-media video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+/* ----------------------------------------------------
+   Workflow / Process Steps
+---------------------------------------------------- */
+
+.workflow-steps{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:var(--space-8);
+    position:relative;
+}
+
+.workflow-step{
+    position:relative;
+    padding-top:var(--space-8);
+}
+
+.workflow-step-number{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:44px;
+    height:44px;
+    border-radius:var(--radius-full);
+    border:1px solid var(--color-border-gold);
+    font-family:var(--font-display);
+    font-size:var(--fs-md);
+    color:var(--color-gold);
+    margin-bottom:var(--space-5);
+}
+
+.workflow-step-line{
+    position:absolute;
+    top:22px;
+    left:calc(50% + 22px);
+    width:calc(100% - 44px);
+    height:1px;
+    background:var(--color-border);
+}
+
+.workflow-step:last-child .workflow-step-line{
+    display:none;
+}
+
+
+/* ----------------------------------------------------
+   CTA Band (ajakan tindakan full-width)
+---------------------------------------------------- */
+
+.cta-band{
+    position:relative;
+    text-align:center;
+    padding:var(--space-24) var(--container-padding);
+    border-radius:var(--radius-xl);
+    background:var(--color-bg-tertiary);
+    border:1px solid var(--color-border);
+    overflow:hidden;
+}
+
+.cta-band::before{
+    content:"";
+    position:absolute;
+    top:-40%;
+    left:50%;
+    transform:translateX(-50%);
+    width:60%;
+    aspect-ratio:1/1;
+    background:radial-gradient(circle, var(--color-gold-muted) 0%, transparent 70%);
+    pointer-events:none;
+}
+
+.cta-band h2{
+    max-width:600px;
+    margin:0 auto var(--space-6);
+}
+
+
+/* ----------------------------------------------------
+   FAQ Accordion
+---------------------------------------------------- */
+
+.faq-item{
+    border-bottom:1px solid var(--color-border);
+}
+
+.faq-question{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--space-4);
+    width:100%;
+    padding:var(--space-6) 0;
+    text-align:left;
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-family:var(--font-body);
+    font-size:var(--fs-md);
+    font-weight:var(--fw-medium);
+    color:var(--color-text-primary);
+}
+
+.faq-icon{
+    flex-shrink:0;
+    width:20px;
+    height:20px;
+    position:relative;
+}
+
+.faq-icon::before,
+.faq-icon::after{
+    content:"";
+    position:absolute;
+    background:var(--color-gold);
+    transition:transform var(--duration-base) var(--ease-standard);
+}
+
+.faq-icon::before{
+    top:50%;
+    left:0;
+    width:100%;
+    height:1.5px;
+    transform:translateY(-50%);
+}
+
+.faq-icon::after{
+    top:0;
+    left:50%;
+    width:1.5px;
+    height:100%;
+    transform:translateX(-50%);
+}
+
+.faq-item.is-open .faq-icon::after{
+    transform:translateX(-50%) rotate(90deg);
+    opacity:0;
+}
+
+.faq-answer{
+    overflow:hidden;
+    max-height:0;
+    transition:max-height var(--duration-base) var(--ease-standard);
+}
+
+.faq-answer-inner{
+    padding-bottom:var(--space-6);
+    color:var(--color-text-secondary);
+    max-width:70ch;
+}
+
+.faq-item.is-open .faq-answer{
+    max-height:400px;
+}
+
+
+/* ----------------------------------------------------
+   Logo Strip ("Trusted by" / software yang digunakan)
+---------------------------------------------------- */
+
+.logo-strip{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:var(--space-16);
+    flex-wrap:wrap;
+    opacity:0.6;
+}
+
+.logo-strip img,
+.logo-strip svg{
+    height:28px;
+    width:auto;
+    filter:grayscale(1) brightness(1.4);
+}
+
+
+/* ----------------------------------------------------
+   Stats Band
+---------------------------------------------------- */
+
+.stats-band{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:var(--space-8);
+    padding:var(--space-16) 0;
+    border-top:1px solid var(--color-border);
+    border-bottom:1px solid var(--color-border);
+}
+
+
+/* ----------------------------------------------------
+   Portfolio Lightbox
+   (dibuat otomatis oleh portfolio.js, mendukung
+   embed YouTube maupun video mp4 self-hosted)
+---------------------------------------------------- */
+
+.portfolio-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:var(--z-modal);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--color-overlay-strong);
+    opacity:0;
+    visibility:hidden;
+    transition:
+        opacity var(--duration-base) var(--ease-standard),
+        visibility var(--duration-base) var(--ease-standard);
+    padding:var(--space-6);
+}
+
+.portfolio-lightbox.is-open{
+    opacity:1;
+    visibility:visible;
+}
+
+.portfolio-lightbox-content{
+    position:relative;
+    width:100%;
+    max-width:960px;
+    aspect-ratio:16/9;
+    background:#000;
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow-lg);
+}
+
+.portfolio-lightbox-video{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+}
+
+.portfolio-lightbox-close{
+    position:absolute;
+    top:var(--space-6);
+    right:var(--space-6);
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:var(--radius-full);
+    background:var(--color-bg-elevated);
+    color:var(--color-text-primary);
+    font-size:1.5rem;
+    line-height:1;
+    z-index:1;
+}
+
+.portfolio-lightbox-close:hover{
+    background:var(--color-gold);
+    color:var(--color-text-on-gold);
+}
+
+
+/* ----------------------------------------------------
+   Testimonial Slider
+---------------------------------------------------- */
+
+.testimonial-slider{
+    overflow:hidden;
+}
+
+.testimonial-track{
+    display:flex;
+    transition:transform var(--duration-slow) var(--ease-out);
+}
+
+.testimonial-slide{
+    flex:0 0 100%;
+    min-width:0;
+    padding:0 var(--space-2);
+}
+
+.testimonial-nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:var(--space-6);
+    margin-top:var(--space-8);
+}
+
+.testimonial-prev,
+.testimonial-next{
+    width:40px;
+    height:40px;
+    border-radius:var(--radius-full);
+    border:1px solid var(--color-border);
+    background:transparent;
+    color:var(--color-text-primary);
+    font-size:1.25rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover{
+    border-color:var(--color-gold);
+    color:var(--color-gold);
+}
+
+.testimonial-dots{
+    display:flex;
+    align-items:center;
+    gap:var(--space-2);
+}
+
+.testimonial-dot{
+    width:8px;
+    height:8px;
+    border-radius:var(--radius-full);
+    background:var(--color-border);
+    border:none;
+    padding:0;
+    transition:background-color var(--duration-fast) var(--ease-standard), width var(--duration-fast) var(--ease-standard);
+}
+
+.testimonial-dot.is-active{
+    background:var(--color-gold);
+    width:20px;
+    border-radius:var(--radius-full);
+}
+
+
+/* ----------------------------------------------------
+   Responsive
+---------------------------------------------------- */
+
+@media (max-width:1024px){
+
+    .split{
+        grid-template-columns:1fr;
+        gap:var(--space-10);
+    }
+
+    .split-reverse{
+        direction:ltr;
+    }
+
+    .split-reverse .split-media{
+        order:-1;
+    }
+
+    .workflow-steps{
+        grid-template-columns:repeat(2, 1fr);
+        row-gap:var(--space-10);
+    }
+
+    .workflow-step-line{
+        display:none;
+    }
+
+    .stats-band{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width:768px){
+
+    .section{
+        padding:var(--space-16) 0;
+    }
+
+    .section-lg{
+        padding:var(--space-20) 0;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:var(--space-32) 0 var(--space-16);
+    }
+
+    .workflow-steps{
+        grid-template-columns:1fr;
+    }
+
+    .logo-strip{
+        gap:var(--space-8);
+    }
+
+}
