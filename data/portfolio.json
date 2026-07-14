@@ -1,26 +1,86 @@
 [
   {
-    "id": "wedding-01",
-    "title": "Amara & Rian — Bali",
-    "category": "Cinematic",
-    "youtube": "PASTE_ID_ATAU_LINK_YOUTUBE_DISINI"
-  },
-  {
-    "id": "wedding-02",
-    "title": "Julien & Claire — Provence",
+    "id": "jesse-kayleigh",
+    "title": "Jesse & Kayleigh",
     "category": "Highlight Reel",
-    "youtube": "PASTE_ID_ATAU_LINK_YOUTUBE_DISINI"
+    "youtube": "https://youtu.be/5E7cVt58wzc"
   },
   {
-    "id": "wedding-03",
-    "title": "Daniel & Mika — Manila",
-    "category": "Same-Day Edit",
-    "youtube": "PASTE_ID_ATAU_LINK_YOUTUBE_DISINI"
+    "id": "social-reel-01",
+    "title": "Social Media Reel",
+    "category": "Social Media Reel",
+    "youtube": "https://youtu.be/u9jb_kTviiA"
   },
   {
-    "id": "wedding-04",
-    "title": "Farhan & Sarah — Jakarta",
-    "category": "Cinematic",
-    "youtube": "PASTE_ID_ATAU_LINK_YOUTUBE_DISINI"
+    "id": "social-reel-02",
+    "title": "Social Media Reel",
+    "category": "Social Media Reel",
+    "youtube": "https://youtu.be/mLSWOIc7ECg"
+  },
+  {
+    "id": "jack-jasmine",
+    "title": "Jack & Jasmine",
+    "category": "Highlight Reel",
+    "youtube": "https://youtu.be/d0QNm0Vi-Yk"
+  },
+  {
+    "id": "hillary-jj",
+    "title": "Hillary & JJ",
+    "category": "Highlight Reel",
+    "youtube": "https://youtu.be/4E0AOBFyqHc"
+  },
+  {
+    "id": "marie-quentin",
+    "title": "Marie & Quentin",
+    "category": "Highlight Reel",
+    "youtube": "https://youtu.be/5nA0eu2NljM"
+  },
+  {
+    "id": "patricia-michel",
+    "title": "Patricia & Michel",
+    "category": "Feature Film",
+    "youtube": "https://youtu.be/vBTXz-rmvXs"
+  },
+  {
+    "id": "christian-ashley",
+    "title": "Christian & Ashley",
+    "category": "Highlight Reel",
+    "youtube": "https://youtu.be/w164CWmNX0A"
+  },
+  {
+    "id": "rory-kristina",
+    "title": "Rory & Kristina",
+    "category": "Feature Film",
+    "youtube": "https://youtu.be/-RVXpCi6LJs"
+  },
+  {
+    "id": "cass-elly",
+    "title": "Cass & Elly",
+    "category": "Highlight Reel",
+    "youtube": "https://youtu.be/TKVM_LqDHBs"
+  },
+  {
+    "id": "lianna-jackson",
+    "title": "Lianna & Jackson",
+    "category": "Highlight Reel",
+    "youtube": "https://youtu.be/zx9eNrFelEg"
+  },
+  {
+    "id": "michael-veronica",
+    "title": "Michael & Veronica",
+    "category": "Highlight Reel",
+    "youtube": "https://youtu.be/r15CqQ4Kjqk"
+  },
+  {
+    "id": "adam-nadhine",
+    "title": "Adam & Nadhine",
+    "category": "Highlight Reel",
+    "youtube": "https://youtu.be/HzgMV2gbLHw"
+  },
+  {
+    "id": "lauren-christopher",
+    "title": "Lauren & Christopher",
+    "category": "Feature Film",
+    "youtube": "https://youtu.be/WZrh-a2xMI8"
   }
 ]
