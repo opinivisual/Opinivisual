@@ -222,6 +222,35 @@
                 );
             });
         });
+
+        /* Card portfolio dibuat secara dinamis (setelah fetch async),
+           sehingga observer global di animation.js sudah lewat duluan
+           dan tidak sempat mendata elemen ini. Kita jalankan observer
+           terpisah khusus untuk card di dalam grid ini supaya animasi
+           reveal tetap jalan dan card tidak nyangkut transparan. */
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const cardsInGrid = grid.querySelectorAll(".reveal-scale");
+
+        if(prefersReducedMotion){
+            cardsInGrid.forEach(function(el){ el.classList.add("is-visible"); });
+            return;
+        }
+
+        if("IntersectionObserver" in window){
+            const localObserver = new IntersectionObserver(function(entries){
+                entries.forEach(function(entry){
+                    if(entry.isIntersecting){
+                        entry.target.classList.add("is-visible");
+                        localObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold:0.1, rootMargin:"0px 0px -40px 0px" });
+
+            cardsInGrid.forEach(function(el){ localObserver.observe(el); });
+        }else{
+            /* Fallback jika browser sangat lama tanpa dukungan IntersectionObserver */
+            cardsInGrid.forEach(function(el){ el.classList.add("is-visible"); });
+        }
     }
 
     lightboxClose.addEventListener("click", closeLightbox);
