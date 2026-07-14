@@ -339,14 +339,12 @@
     justify-content:center;
     gap:var(--space-16);
     flex-wrap:wrap;
-    opacity:0.6;
 }
 
 .logo-strip img,
 .logo-strip svg{
     height:28px;
     width:auto;
-    filter:grayscale(1) brightness(1.4);
 }
 
 
