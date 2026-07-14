@@ -123,6 +123,10 @@
     flex-shrink:0;
 }
 
+.navbar-menu-cta{
+    display:none;
+}
+
 .navbar-toggle{
     display:none;
     flex-direction:column;
@@ -200,6 +204,10 @@
         display:none;
     }
 
+    .navbar-menu-cta{
+        display:inline-flex;
+    }
+
     .navbar-menu .btn{
         margin-top:var(--space-6);
         width:100%;
@@ -221,7 +229,7 @@
     transition:
         opacity var(--duration-base) var(--ease-standard),
         visibility var(--duration-base) var(--ease-standard);
-    z-index:var(--z-overlay);
+    z-index:var(--z-sticky);
 }
 
 .navbar-backdrop.is-visible{
