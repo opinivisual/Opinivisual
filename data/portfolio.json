@@ -82,5 +82,23 @@
     "title": "Lauren & Christopher",
     "category": "Feature Film",
     "youtube": "https://youtu.be/WZrh-a2xMI8"
+  },
+  {
+    "id": "gemma-tony",
+    "title": "Gemma & Tony",
+    "category": "Highlight Reel",
+    "youtube": "https://youtu.be/by3sJHDkVDQ"
+  },
+  {
+    "id": "kelly-nicholas",
+    "title": "Kelly & Nicholas",
+    "category": "Highlight Reel",
+    "youtube": "https://youtu.be/qeN-jf1_1hg"
+  },
+  {
+    "id": "social-reel-03",
+    "title": "Social Media Reel",
+    "category": "Social Media Reel",
+    "youtube": "https://youtu.be/7veBYLgxqgE"
   }
 ]
