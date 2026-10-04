@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://opinivisual.com/sitemap.xml
+Sitemap: https://opinivisual.github.io/Opinivisual/sitemap.xml
