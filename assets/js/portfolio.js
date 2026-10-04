@@ -74,8 +74,17 @@
         return "";
     }
 
+    /* maxresdefault = true 16:9 HD thumbnail; hqdefault is the
+       fallback for videos that do not have one (see attachImageFallback) */
     function getYouTubeThumbnail(youtubeId){
-        return "https://img.youtube.com/vi/" + youtubeId + "/hqdefault.jpg";
+        return "https://img.youtube.com/vi/" + youtubeId + "/maxresdefault.jpg";
+    }
+
+    function attachImageFallback(img){
+        img.addEventListener("error", function onError(){
+            img.removeEventListener("error", onError);
+            img.src = img.src.replace("maxresdefault", "hqdefault");
+        });
     }
 
 
@@ -111,6 +120,7 @@
                     '</div>' +
                 '</button>';
 
+            attachImageFallback(card.querySelector("img"));
             grid.appendChild(card);
         });
 
@@ -141,8 +151,12 @@
     if(filterButtons.length){
         filterButtons.forEach(function(btn){
             btn.addEventListener("click", function(){
-                filterButtons.forEach(function(b){ b.classList.remove("is-active"); });
+                filterButtons.forEach(function(b){
+                    b.classList.remove("is-active");
+                    b.setAttribute("aria-pressed", "false");
+                });
                 btn.classList.add("is-active");
+                btn.setAttribute("aria-pressed", "true");
 
                 const filterValue = btn.getAttribute("data-filter");
 
@@ -167,6 +181,9 @@
     if(!lightbox){
         lightbox = document.createElement("div");
         lightbox.className = "portfolio-lightbox";
+        lightbox.setAttribute("role", "dialog");
+        lightbox.setAttribute("aria-modal", "true");
+        lightbox.setAttribute("aria-label", "Video player");
         lightbox.innerHTML =
             '<button class="portfolio-lightbox-close" aria-label="Tutup">&times;</button>' +
             '<div class="portfolio-lightbox-content"></div>';
@@ -176,9 +193,12 @@
     const lightboxContent = lightbox.querySelector(".portfolio-lightbox-content");
     const lightboxClose = lightbox.querySelector(".portfolio-lightbox-close");
 
+    let lastTrigger = null;
+
     function openLightbox(youtubeId, videoSrc, title){
 
         lightboxContent.innerHTML = "";
+        lastTrigger = document.activeElement;
 
         if(youtubeId){
             const iframe = document.createElement("iframe");
@@ -203,12 +223,14 @@
 
         lightbox.classList.add("is-open");
         document.body.style.overflow = "hidden";
+        lightboxClose.focus();
     }
 
     function closeLightbox(){
         lightbox.classList.remove("is-open");
         document.body.style.overflow = "";
         lightboxContent.innerHTML = "";
+        if(lastTrigger && lastTrigger.focus) lastTrigger.focus();
     }
 
     function attachTriggerEvents(){

@@ -5,90 +5,182 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Opini Visual — Wedding Video Editor Portfolio</title>
 <meta name="description" content="Portfolio of a Bali-based wedding video editor with 6+ years of experience: feature films, highlight reels, and social media reels.">
+<meta name="theme-color" content="#0b0a09">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Opini Visual — Wedding Video Editor Portfolio">
+<meta property="og:description" content="Wedding films that feel like cinema. Feature films, highlight reels and social reels by a Bali-based wedding video editor.">
+<meta property="og:image" content="https://opinivisual.github.io/Opinivisual/assets/images/hero-poster.jpg">
 
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
-<link rel="stylesheet" href="assets/css/main.css">
+
+<script>document.documentElement.classList.add("js");</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/images/hero-poster.jpg" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/cinematic.css">
 </head>
-<body>
+<body id="top">
+
+<a href="#work" class="skip-link">Skip to the films</a>
+
 
 <!-- ============================================
-     NAVBAR
+     HEADER
 ============================================ -->
-<header class="navbar">
-    <div class="navbar-inner">
+<header class="site-header">
+    <div class="site-header__inner">
+        <a href="#top" class="brand">Opini Visual</a>
 
-        <a href="portfolio.html" class="navbar-logo">
-            <img src="assets/images/logo.png" alt="Opini Visual">
-            Opini Visual
-        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
 
-        <nav class="navbar-menu">
-            <a href="#work" class="navbar-link is-active">Work</a>
-            <a href="#skills" class="navbar-link">Skills</a>
-            <a href="#contact" class="navbar-link">Contact</a>
+        <nav id="site-nav" class="site-nav" aria-label="Main">
+            <a href="#work">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </nav>
-
     </div>
 </header>
 
 
+<main>
+
 <!-- ============================================
-     INTRO
+     HERO
 ============================================ -->
-<section class="section" style="padding-top:calc(var(--space-24) + 3rem);">
-    <div class="container-md text-center">
+<section class="hero" aria-label="Introduction">
+    <div class="hero__media" aria-hidden="true">
+        <img class="hero__poster" src="assets/images/hero-poster.jpg" alt="" width="1920" height="1080" fetchpriority="high">
+        <video class="hero__video" data-src="assets/video/hero.mp4" poster="assets/images/hero-poster.jpg" muted loop playsinline preload="none" tabindex="-1"></video>
+    </div>
+
+    <div class="hero__inner">
         <span class="eyebrow">Wedding Video Editor · Bali</span>
-        <h1>Wedding films, edited with story first</h1>
-        <p class="text-lead" style="margin:var(--space-6) auto 0; max-width:60ch;">
-            I'm a wedding video editor with 6+ years of experience, turning raw footage into
-            highlight reels, feature films, and social media reels that couples and studios
-            are proud to deliver.
-        </p>
+        <h1>I create wedding films that feel like <em>cinema.</em></h1>
+        <div class="hero__foot">
+            <p class="hero__meta">Feature films · Highlight reels · Social reels</p>
+            <a href="#work" class="hero__cue">View the films</a>
+        </div>
     </div>
 </section>
 
 
 <!-- ============================================
-     FILTER + GRID
+     PORTFOLIO
 ============================================ -->
-<section class="section" id="work">
+<section class="section" id="work" aria-labelledby="work-title">
     <div class="container">
 
-        <div class="btn-group text-center" style="justify-content:center; margin-bottom:var(--space-12);">
-            <button class="btn btn-outline btn-sm is-active" data-filter="all">All Work</button>
-            <button class="btn btn-outline btn-sm" data-filter="Feature Film">Feature Film</button>
-            <button class="btn btn-outline btn-sm" data-filter="Highlight Reel">Highlight Reel</button>
-            <button class="btn btn-outline btn-sm" data-filter="Social Media Reel">Social Media Reel</button>
+        <div class="work-head">
+            <div class="reveal">
+                <span class="eyebrow" style="margin-bottom:1.25rem;">Portfolio</span>
+                <h2 id="work-title">Selected <em>films</em></h2>
+            </div>
+
+            <div class="filters reveal" role="group" aria-label="Filter films" style="--d:120ms;">
+                <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All Work</button>
+                <button class="filter-btn" type="button" data-filter="Feature Film" aria-pressed="false">Feature Film</button>
+                <button class="filter-btn" type="button" data-filter="Highlight Reel" aria-pressed="false">Highlight Reel</button>
+                <button class="filter-btn" type="button" data-filter="Social Media Reel" aria-pressed="false">Social Media Reel</button>
+            </div>
         </div>
 
-        <div class="card-grid portfolio-grid" data-source="data/portfolio.json"></div>
+        <div class="portfolio-grid" data-source="data/portfolio.json"></div>
 
     </div>
 </section>
 
 
 <!-- ============================================
-     SKILLS
+     ABOUT
 ============================================ -->
-<section class="section section-alt" id="skills">
-    <div class="container-md text-center">
-        <span class="eyebrow">Tools &amp; Skills</span>
-        <h2>What I work with</h2>
-        <p style="max-width:56ch; margin:var(--space-4) auto var(--space-8);">
-            Premiere Pro, DaVinci Resolve, and After Effects, with colour grading and
-            storytelling at the centre of every edit.
-        </p>
-        <div class="btn-group" style="justify-content:center;">
-            <span class="btn btn-outline btn-sm">Premiere Pro</span>
-            <span class="btn btn-outline btn-sm">DaVinci Resolve</span>
-            <span class="btn btn-outline btn-sm">After Effects</span>
-            <span class="btn btn-outline btn-sm">Color Grading</span>
-            <span class="btn btn-outline btn-sm">Storytelling</span>
+<section class="section about" id="about" aria-labelledby="about-title">
+    <div class="container about__grid">
+
+        <figure class="about__portrait reveal reveal-image">
+            <img src="assets/images/team/editor-01.jpg" alt="Portrait of the editor with a camera, by the sea in Bali" width="1080" height="1080" loading="lazy">
+        </figure>
+
+        <div class="about__text">
+            <span class="eyebrow reveal">About</span>
+            <h2 class="about__statement reveal" id="about-title" style="--d:80ms;">Wedding films, edited with <em>story</em> first.</h2>
+            <p class="about__bio reveal" style="--d:160ms;">
+                I'm a wedding video editor with 6+ years of experience, turning raw footage into
+                highlight reels, feature films, and social media reels that couples and studios
+                are proud to deliver.
+            </p>
+
+            <dl class="about__meta reveal" style="--d:240ms;">
+                <div>
+                    <dt>Based in</dt>
+                    <dd>Bali, Indonesia</dd>
+                </div>
+                <div>
+                    <dt>Experience</dt>
+                    <dd>6+ years</dd>
+                </div>
+                <div>
+                    <dt>Tools</dt>
+                    <dd>Premiere Pro, DaVinci Resolve, After Effects</dd>
+                </div>
+                <div>
+                    <dt>Craft</dt>
+                    <dd>Color grading, storytelling</dd>
+                </div>
+            </dl>
         </div>
+
+    </div>
+</section>
+
+
+<!-- ============================================
+     SERVICES
+============================================ -->
+<section class="section services" id="services" aria-labelledby="services-title">
+    <div class="container">
+
+        <div class="section-head">
+            <span class="eyebrow reveal">Services</span>
+            <h2 class="reveal" id="services-title" style="--d:80ms;">What I <em>craft</em></h2>
+        </div>
+
+        <ol>
+            <li class="service reveal">
+                <span class="service__num">01</span>
+                <h3 class="service__name">Wedding Films</h3>
+                <p class="service__desc">Cinematic films that carry the feeling of the day, not just the footage.</p>
+            </li>
+            <li class="service reveal">
+                <span class="service__num">02</span>
+                <h3 class="service__name">Highlight Films</h3>
+                <p class="service__desc">A few emotional minutes that capture the day at its best.</p>
+            </li>
+            <li class="service reveal">
+                <span class="service__num">03</span>
+                <h3 class="service__name">Full Wedding Films</h3>
+                <p class="service__desc">The full story of the day, from the first look to the last dance.</p>
+            </li>
+            <li class="service reveal">
+                <span class="service__num">04</span>
+                <h3 class="service__name">Ceremony &amp; Speeches</h3>
+                <p class="service__desc">The vows and the words that matter, cut cleanly and with clear sound.</p>
+            </li>
+            <li class="service reveal">
+                <span class="service__num">05</span>
+                <h3 class="service__name">Social Reels</h3>
+                <p class="service__desc">Short vertical cuts made for sharing, in the same cinematic look.</p>
+            </li>
+            <li class="service reveal">
+                <span class="service__num">06</span>
+                <h3 class="service__name">Color Grading</h3>
+                <p class="service__desc">A refined, timeless grade that keeps skin tones natural.</p>
+            </li>
+        </ol>
+
     </div>
 </section>
 
@@ -96,40 +188,33 @@
 <!-- ============================================
      CONTACT
 ============================================ -->
-<section class="section" id="contact">
-    <div class="container-md text-center">
-        <span class="eyebrow">Contact</span>
-        <h2>Let's work together</h2>
-        <p style="max-width:52ch; margin:var(--space-4) auto var(--space-8);">
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+        <span class="eyebrow reveal">Contact</span>
+        <h2 class="reveal" id="contact-title" style="--d:80ms;">Let's tell your <em>story.</em></h2>
+        <p class="contact__lead reveal" style="--d:160ms;">
             Have a wedding film to edit? Send me a message and I'll get back to you.
         </p>
-        <a href="mailto:visualopini@gmail.com" class="btn btn-primary btn-lg">
-            visualopini@gmail.com
-            <span class="btn-arrow">→</span>
-        </a>
+        <a href="mailto:visualopini@gmail.com" class="contact__mail reveal" style="--d:240ms;">visualopini@gmail.com</a>
     </div>
 </section>
+
+</main>
 
 
 <!-- ============================================
      FOOTER
 ============================================ -->
-<footer class="footer">
-    <div class="footer-inner">
-        <div class="footer-bottom">
-            <p class="footer-copyright">© <span data-current-year></span> Opini Visual. All rights reserved.</p>
-        </div>
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>© <span data-current-year></span> Opini Visual</p>
+        <p>Wedding Video Editor · Bali</p>
     </div>
 </footer>
 
 
-<!-- ============================================
-     SCRIPTS
-============================================ -->
-<script src="assets/js/navbar.js" defer></script>
+<script src="assets/js/cinematic.js" defer></script>
 <script src="assets/js/portfolio.js" defer></script>
-<script src="assets/js/animation.js" defer></script>
-<script src="assets/js/main.js" defer></script>
 
 </body>
 </html>
